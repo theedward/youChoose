@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Which Is Better?</title>
+</head>
+
+    <body>
+    <h1>Which is Better?</h1>
+          <?php
+          
+          	$dbhost = 'localhost';	
+			$dbuser = 'teste';
+			$dbpass = 'teste';
+			$dbname = 'which';
+		
+		    	$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+		    
+				if (mysqli_connect_errno())
+				  {
+				  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				  }
+						    
+                $query = "SELECT * FROM `images_1`;";
+                $result = mysqli_query($con, $query);
+                while($row = mysqli_fetch_array($result)) {
+                      // Display your datas on the page
+					  echo $row['ref'];
+                }
+                
+                mysqli_close($con); 
+          ?>
+    </body>
+</html>
+
+ <!-- This is a comment --> 
+</body>
